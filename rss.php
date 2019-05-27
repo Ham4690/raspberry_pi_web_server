@@ -28,7 +28,7 @@
 </html>
 <?php
 function createRssList(string $url) {
-    $count    = 0;  // カウント保持用
+    $count    = 1;  // カウント保持用
     $count_mx = 20; // 表示する行数
 
     $rss = simplexml_load_file($url);   // RSSファイルを取得
@@ -42,7 +42,7 @@ function createRssList(string $url) {
     foreach ($rss -> item as $item) {
         if ($count >= $count_mx) break; // 最大数に達したら終了
 
-        echo("<a href=\"" . $item -> link . "\" class=\"list-group-item\">" . $item -> title . "</a>");
+        echo("<a href=\"" . $item -> link . "\" class=\"list-group-item\">".$count.":". $item -> title . "</a>");
         $count++;
     }
 
