@@ -40,7 +40,7 @@ function createRssList(string $url) {
 
     // 記事一覧の処理
     foreach ($rss -> item as $item) {
-        if ($count >= $count_mx) break; // 最大数に達したら終了
+        if ($count > $count_mx) break; // 最大数に達したら終了
 
         echo("<a href=\"" . $item -> link . "\" class=\"list-group-item\">".$count.":". $item -> title . "</a>");
         $count++;
