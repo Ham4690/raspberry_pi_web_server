@@ -20,14 +20,18 @@
     </nav>
 
     <div class="container">
-        <div class="row"></div>
+        <div class="row">
+            <?php createRssList(); ?>
+        </div>
     </div>
 </body>
 </html>
-<?php 
-$rss = simplexml_load_file('http://feeds.feedburner.com/hatena/b/hotentry.css'); //取得先のRSSフィードを指定
-foreach ($rss -> item as $item) {
-    echo $item -> title;
-    echo "<br>";
+<?php
+function createRssList() {
+    echo("<div class=\"col-sm-12 col-md-6\">");
+    echo("<div class=\"list-group list-group-margin\">");
+    echo("<a href=\"#\" class=\"list-group-item active\">タイトル</a>");
+    echo("<a href=\"#\" class=\"list-group-item\">記事名</a>");
+    echo("</div></div>");
 }
 ?>
