@@ -29,7 +29,7 @@
 <?php
 function createRssList(string $url) {
     $count    = 0;  // カウント保持用
-    $count_mx = 10; // 表示する行数
+    $count_mx = 20; // 表示する行数
 
     $rss = simplexml_load_file($url);   // RSSファイルを取得
     if ($rss === false) return false;   // 取得失敗時、処理を終了
