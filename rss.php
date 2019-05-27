@@ -21,7 +21,10 @@
 
     <div class="container">
         <div class="row">
-            <?php createRssList("http://feeds.feedburner.com/hatena/b/hotentry.css"); ?>
+            <?php
+                createRssList("http://b.hatena.ne.jp/hotentry/it.rss");
+                createRssList("http://b.hatena.ne.jp/entrylist/it.rss");
+            ?>
         </div>
     </div>
 </body>
