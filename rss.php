@@ -21,17 +21,31 @@
 
     <div class="container">
         <div class="row">
-            <?php createRssList(); ?>
+            <?php createRssList("http://feeds.feedburner.com/hatena/b/hotentry.css"); ?>
         </div>
     </div>
 </body>
 </html>
 <?php
-function createRssList() {
+function createRssList(string $url) {
+    $count    = 0;  // カウント保持用
+    $count_mx = 10; // 表示する行数
+
+    $rss = simplexml_load_file($url);   // RSSファイルを取得
+    if ($rss === false) return false;   // 取得失敗時、処理を終了
+
     echo("<div class=\"col-sm-12 col-md-6\">");
     echo("<div class=\"list-group list-group-margin\">");
-    echo("<a href=\"#\" class=\"list-group-item active\">タイトル</a>");
-    echo("<a href=\"#\" class=\"list-group-item\">記事名</a>");
+    echo("<a href=\"" . $rss -> channel -> link  . "\" class=\"list-group-item active\">" . $rss -> channel -> title . "</a>");
+
+    // 記事一覧の処理
+    foreach ($rss -> item as $item) {
+        if ($count >= $count_mx) break; // 最大数に達したら終了
+
+        echo("<a href=\"" . $item -> link . "\" class=\"list-group-item\">" . $item -> title . "</a>");
+        $count++;
+    }
+
     echo("</div></div>");
 }
 ?>
