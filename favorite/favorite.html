@@ -6,20 +6,23 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Favorite List</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<style></style>
+	<style>
+		.list-group-margin{
+			margin-top: 30px;
+		}
+	</style>
 </head>
 <body>
 	<nav class="navbar navbar-dark bg-dark">
 		<div class="container">
-			<p class="container">お気に入りリスト</p>
+			<p class="text-muted">お気に入りリスト</p>
 		</div>
 	</nav>
 
 	<div class="container">
 			<div class="row">
-				<div class="col-sm-12 col-md-6">
 						<div class="col-sm-12 col-md-6">
-							<div class="list-group">
+							<div class="list-group list-group-margin">
 								<p class="list-group-item active">検索エンジン</p>
 								<a href="https://google.com" class="list-group-item">Google</a>
 								<a href="https://www.yahoo.co.jp/" class="list-group-item">Yahoo! Japan</a>
@@ -28,7 +31,7 @@
 							</div>
 						</div>
 						<div class="col-sm-12 col-md-6">
-							<div class="list-group">
+							<div class="list-group list-group-margin">
 								<p class="list-group-item active">ECサイト</p>
 								<a href="https://www.amazon.co.jp/" class="list-group-item">Amazon JP</a>
 								<a href="https://www.amazon.com/" class="list-group-item">Amazon US</a>
@@ -36,15 +39,14 @@
 								<a href="https://www.gearbest.com/" class="list-group-item">GearBest</a>
 							</div>
 						</div>
-							<div class="col-sm-12 col-md-6">
-							<div class="list-group">
+						<div class="col-sm-12 col-md-6">
+							<div class="list-group list-group-margin">
 								<p class="list-group-item active">tech blog</p>
 								<a href="https://dev.classmethod.jp/" class="list-group-item">Developers.IO</a>
 								<a href="https://developer.hatenastaff.com/" class="list-group-item">Hatena Developer Blog</a>
 								<a href="https://moneyforward.com/engineers_blog/" class="list-group-item">Money Forward</a>
 							</div>
 						</div>
-				</div>
 			</div>
 	</div>
 </body>
